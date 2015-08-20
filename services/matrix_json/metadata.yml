@@ -1,0 +1,53 @@
+--- 
+authors: 
+  - 
+    email: msarmien@jcvi.org
+    name: "Maria Kim"
+    sponsor_organization: JCVI
+    sponsor_uri: "http://www.jcvi.org"
+description: "Retrieve a json of matrix coordinates of co-expression values of genes in a pathway group."
+endpoints: 
+  /list: 
+    description: "Does not provide any list"
+  /search: 
+    description: "Retrieve a json of matrix coordinates of co-expression values of genes in a pathway group."
+    parameters: 
+      - 
+        default: c5_genes_050
+        description: "Filename"
+        name: name
+        required: true
+        type: string
+      - 
+        default: class
+        description: "Type of grouping"
+        name: type
+        required: true
+        type: string
+icon: araport.png
+main_module: services.matrix_json.main.py
+name: matrix_json
+tags: 
+  - arabidopsis
+  - gene
+  - api
+  - kegg
+  - expression
+  - atted
+  - pathway
+  - msarmien
+timeout: 120
+type: query
+url: "https://www.araport.org"
+validate_request: true
+version: 1.0
+whitelist: 
+  - apps.araport.org
+sources:
+    - title: A.thaliana co-occurence matrix of gene expression and pathways
+      description: A.thaliana co-occurence matrix of gene expression and pathways
+      sponsor_organization_name: J. Craig Venter Institute
+      sponsor_uri: http://www.jcvi.org/
+      provider_name: Christopher D. Town
+      provider_email: cdtown@jcvi.org
+      uri: https://www.araport.org
