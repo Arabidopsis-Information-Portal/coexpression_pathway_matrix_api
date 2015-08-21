@@ -13,17 +13,31 @@ endpoints:
     description: "Retrieve a json of matrix coordinates of co-expression values of genes in a pathway group."
     parameters: 
       - 
-        default: c5_genes_050
-        description: "Filename"
+        default: c5
+        description: "Name of class(ex: c1,c2,c3,c4,c5), subclass(ex: sc1,sc2), pathway(ex: kp04626, kp04712)"
         name: name
         required: true
         type: string
       - 
         default: class
-        description: "Type of grouping"
+        description: "Type of grouping: choose either class, subclass, pathways"
         name: type
         required: true
         type: string
+        enum:
+        - "class"
+        - "subclass"
+        - "pathways"
+      - 
+        default: 0.5
+        description: "COR threshold: choose either 0.5 or 0.75"
+        name: threshold
+        required: false
+        type: integer
+        format: int64
+        enum:
+        - "0.5"
+        - "0.75"
 icon: araport.png
 main_module: services.matrix_json.main.py
 name: matrix_json

@@ -6,7 +6,7 @@ def search(args):
     """
 
     # Request the file
-    tools.get_data(args['type'],args['name'])
+    tools.get_data(args['type'], args['name'], args['threshold'])
 
     
     
